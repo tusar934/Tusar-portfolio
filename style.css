@@ -10,21 +10,37 @@
     display: flex;
     list-style: none;
     gap: 30px;
-    margin-left: 537px;
+    /* margin-left: 537px; */
 
 }
 
 .navbar {
-    position:fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #fff;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 20px 60px;
-    background: #ffffff;
-
 
 }
-
+.hamburger {
+display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  margin-left: auto;   /* 👈 RIGHT SIDE PUSH */
+}
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #111;
+  border-radius: 2px;
+  transition: 0.3s;
+}
 .logo {
     font-size: 28px;
     font-weight: bold;
@@ -329,8 +345,268 @@
     color: #6b7280;
     font-size: 14px;
 }
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
- 
-  .exp-header { flex-direction: column; gap: 10px; }
+
+    .exp-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* ===============================
+   GLOBAL RESPONSIVE FIX
+================================ */
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navlinks {
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .navlinks li a {
+        font-size: 16px;
+    }
+
+    .btn {
+        display: none;
+    }
+}
+
+/* ===============================
+   HERO SECTION
+================================ */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-left,
+    .hero-right {
+        width: 100%;
+    }
+
+    .buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .stats {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+/* ===============================
+   ABOUT SECTION
+================================ */
+@media (max-width: 900px) {
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===============================
+   EDUCATION
+================================ */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 0;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dot {
+        display: none;
+    }
+}
+
+/* ===============================
+   SKILLS
+================================ */
+@media (max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .extra-skills {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+/* ===============================
+   EXPERIENCE
+================================ */
+@media (max-width: 768px) {
+    .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+/* ===============================
+   PROJECTS
+================================ */
+@media (max-width: 900px) {
+    .project-card {
+        flex-direction: column;
+    }
+
+    .project-image {
+        height: 200px;
+    }
+}
+
+/* ===============================
+   CONTACT
+================================ */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .info-item {
+        justify-content: center;
+    }
+}
+
+/* ===============================
+   CTA
+================================ */
+@media (max-width: 768px) {
+    .cta-section {
+        text-align: center;
+    }
+}
+
+/* ===============================
+   FOOTER
+================================ */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
+/* ===============================
+   HAMBURGER ICON
+================================ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #111;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ===============================
+   MOBILE SLIDE MENU
+================================ */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navlinks {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transition: right 0.4s ease;
+  }
+
+  .navlinks.active {
+    right: 0;
+  }
+
+  .btn {
+    display: none;
+  }
+}
+/* ===============================
+   HAMBURGER ANIMATION (X)
+================================ */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* fixed navbar space */
+body {
+  padding-top: 90px;
 }
