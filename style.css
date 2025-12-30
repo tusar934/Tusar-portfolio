@@ -6,14 +6,8 @@
 
 }
 
-.navlinks {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-    ;
-    /* margin-left: 537px; */
 
-}
+
 
 .navbar {
     position: fixed;
@@ -29,60 +23,68 @@
     perspective: 800px;
 
 }
+
 .hamburger {
-display: none;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-  margin-left: auto;   /* 👈 RIGHT SIDE PUSH */
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    margin-left: auto;
+    /* 👈 RIGHT SIDE PUSH */
 }
+
 .hamburger span {
-  width: 28px;
-  height: 3px;
-  background: #111;
-  border-radius: 2px;
-  transition: 0.3s;
+    width: 28px;
+    height: 3px;
+    background: #111;
+    border-radius: 2px;
+    transition: 0.3s;
 }
+
 .logo {
     font-size: 28px;
     font-weight: bold;
     color: #5b7cfa;
 }
 
+.navlinks {
+    display: flex;
+    gap: 18px;
+}
+
+.navlinks li {
+    list-style: none;
+}
+
 .navlinks li a {
-    position: relative;
-    display: inline-block;
-    padding: 8px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 20px;
     color: #222;
     font-weight: 500;
     text-decoration: none;
-    transition: all 0.3s ease;
-    transform-style: preserve-3d;
+
+    /* REAL BORDER */
+    border: solid #4f46e5;
+    border-radius: 12px;
+
+    /* Smooth animation */
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease,
+                color 0.3s ease;
 }
 
-/* 3D hover effect */
+/* Hover effect */
 .navlinks li a:hover {
-    transform: translateY(-6px) rotateX(12deg);
-    color: #2563eb;
+    background: #2563eb;
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.35);
 }
 
-/* shadow depth */
-.navlinks li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 100%;
-    height: 4px;
-    background: rgba(37, 99, 235, 0.4);
-    filter: blur(8px);
-    opacity: 0;
-    transition: 0.3s ease;
-}
-
-.navlinks li a:hover::after {
-    opacity: 1;
-}
 
 
 .btn {
@@ -574,71 +576,72 @@ section {
         gap: 20px;
     }
 }
+
 /* ===============================
    HAMBURGER ICON
 ================================ */
 .hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
 }
 
 .hamburger span {
-  width: 28px;
-  height: 3px;
-  background: #111;
-  border-radius: 2px;
-  transition: 0.3s;
+    width: 28px;
+    height: 3px;
+    background: #111;
+    border-radius: 2px;
+    transition: 0.3s;
 }
 
 /* ===============================
    MOBILE SLIDE MENU
 ================================ */
 @media (max-width: 900px) {
-  .hamburger {
-    display: flex;
-  }
+    .hamburger {
+        display: flex;
+    }
 
-  .navlinks {
-    position: fixed;
-    top: 80px;
-    right: -100%;
-    width: 100%;
-    height: calc(100vh - 80px);
-    background: #fff;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    transition: right 0.4s ease;
-  }
+    .navlinks {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: right 0.4s ease;
+    }
 
-  .navlinks.active {
-    right: 0;
-  }
+    .navlinks.active {
+        right: 0;
+    }
 
-  .btn {
-    display: none;
-  }
+    .btn {
+        display: none;
+    }
 }
+
 /* ===============================
    HAMBURGER ANIMATION (X)
 ================================ */
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 6px);
+    transform: rotate(45deg) translate(5px, 6px);
 }
 
 .hamburger.active span:nth-child(2) {
-  opacity: 0;
+    opacity: 0;
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* fixed navbar space */
 body {
-  padding-top: 90px;
+    padding-top: 90px;
 }
-
