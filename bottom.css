@@ -393,14 +393,6 @@
     text-align: center;
 }
 
-.section-tag {
-    color: #3b82f6;
-    font-size: 13px;
-    letter-spacing: 2px;
-    margin-left: auto;
-}
-
-
 
 .section-subtitle {
     color: #6b7280;
@@ -536,3 +528,4 @@
         font-size: 28px;
     }
 }
+
